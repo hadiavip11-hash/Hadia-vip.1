@@ -130,7 +130,7 @@ export default function QRSection() {
                 {/* Gift info */}
                 <div className="text-center">
                   <p className="text-xs text-muted-foreground/50 mb-0.5 font-light">هدية خاصة من</p>
-                  <p className="text-lg font-semibold text-gold-gradient">أحمد</p>
+                  <p className="text-lg font-semibold text-gold-gradient">لمن تحب</p>
                 </div>
 
                 {/* Scan prompt */}
@@ -139,7 +139,7 @@ export default function QRSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute bottom-5 left-1/2 -translate-x-1/2"
                 >
-                  <span className="text-xs text-primary/70 font-light">امسح للكشف عن الهدية</span>
+                  <span className="text-xs text-primary/70 font-light">هدية تهدى ولا تباع</span>
                 </motion.div>
               </div>
 
