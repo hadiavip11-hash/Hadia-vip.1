@@ -45,13 +45,24 @@ export default function HeroSection() {
   const particles = useMemo(() => generateParticles(18), [])
   const stars = useMemo(() => generateStars(35), [])
 
-  return (
-    <section 
-      ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Baghdad night sky gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#070a12] via-[#0a0f1a] to-[#0d1424]" />
+ return (
+<section
+  ref={ref}
+  className="relative min-h-[160vh] flex items-center justify-center overflow-hidden"
+>
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover opacity-60"
+>
+  <source src="/videos/hero-video.mp4" type="video/mp4" />
+</video>
+    {/* Dark Overlay */}
+<div className="absolute inset-0 bg-black/0" />
+          {/* Baghdad night sky gradient */}
+     <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/10" />
       
       {/* Subtle warm horizon glow - Baghdad night atmosphere */}
       <div 
@@ -105,7 +116,7 @@ export default function HeroSection() {
         style={{ y, opacity, scale }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
       >
-        <div className="relative w-[340px] h-[400px] md:w-[420px] md:h-[500px]">
+        <div className="absolute inset-0">
           {/* Soft golden glow behind logo */}
           <div 
             className="absolute inset-0 blur-[60px] opacity-[0.12]"
@@ -114,16 +125,12 @@ export default function HeroSection() {
             }}
           />
           <div 
-            className="absolute inset-0 opacity-[0.065] blur-[2px]"
+            className="absolute inset-0"
             style={{
               filter: "drop-shadow(0 0 40px rgba(212,175,55,0.15))",
             }}
           >
-            <img
-              src="/images/logo.jpg"
-              alt=""
-              className="w-full h-full object-contain"
-            />
+
           </div>
         </div>
       </motion.div>
@@ -164,20 +171,21 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: smoothEase }}
         >
           {/* Small logo */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: smoothEase }}
-            className="mb-10"
-          >
-            <img 
-              src="/images/logo.jpg" 
-              alt="هديّة" 
-              className="w-16 h-20 md:w-20 md:h-24 mx-auto object-contain rounded-lg"
-              style={{
-                filter: "drop-shadow(0 4px 20px rgba(212,175,55,0.15))",
-              }}
-            />
+<motion.div
+  initial={{ scale: 0.9, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.9, delay: 0.2, ease: smoothEase }}
+  className="mb-10"
+>
+<img
+  src="/images/logo.jpg"
+  alt="هدية"
+  className="w-16 h-20 md:w-20 md:h-24 mx-auto object-contain"
+  style={{
+    filter: "drop-shadow(0 4px 20px rgba(212,175,55,0.15))",
+  }}
+/>
+</motion.div>
           </motion.div>
 
           {/* Main headline - clean and sharp */}
@@ -231,8 +239,6 @@ export default function HeroSection() {
               />
             </button>
           </motion.div>
-        </motion.div>
-
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}

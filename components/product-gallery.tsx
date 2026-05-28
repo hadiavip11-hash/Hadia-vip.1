@@ -270,7 +270,7 @@ export default function ProductGallery() {
             }}
           >
             <video
-              src="/videos/product-video.mp4"
+             src="/videos/hero-video.mp4"
               autoPlay
               loop
               muted
